@@ -20,6 +20,11 @@ function getData(endpoint){
     });
 }
 
-const moviesPromise = getData('./movies/json');
-const actorsPromise = getData('./actors/json');
-const directorsPromise = getData('./directors/json');
+const moviesPromise = getData('./movies.json');
+const actorsPromise = getData('./actors.json');
+const directorsPromise = getData('./directors.json');
+
+Promise.all([moviesPromise, actorsPromise, directorsPromise])
+    .then((data) => {
+        console.log(data);
+    });
