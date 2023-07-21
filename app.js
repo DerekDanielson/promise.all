@@ -24,6 +24,10 @@ const moviesPromise = getData('./movies.json');
 const actorsPromise = getData('./actors.json');
 const directorsPromise = getData('./directors.json');
 
+const dummyPromise = new Promise((resolve, reject) => {
+    resolve('Hello World');
+});
+
 Promise.all([moviesPromise, actorsPromise, directorsPromise])
     .then((data) => {
         console.log(data);
