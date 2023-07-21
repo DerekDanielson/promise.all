@@ -27,4 +27,5 @@ const directorsPromise = getData('./directors.json');
 Promise.all([moviesPromise, actorsPromise, directorsPromise])
     .then((data) => {
         console.log(data);
-    });
+    })
+    .catch((error) => console.log(error));
